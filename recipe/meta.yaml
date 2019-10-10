@@ -1,6 +1,6 @@
 {% set name = "conda-prefix-replacement" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "90c274e82cd98c4e77d567ff693ddd53ec8d9bcc611ac4c0c4ae699484abd20e" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "c4387bd35e286b3fe30b16e325a371f1cad8814cb06a356b5967ac6a3b12c9ad" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/conda/conda-prefix-replacement/archive/{{ version }}.tar.gz
+  url: https://github.com/conda/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
