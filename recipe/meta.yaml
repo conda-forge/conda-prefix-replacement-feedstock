@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: pip install --no-deps --ignore-installed -vv .
   entry_points:
@@ -20,14 +20,16 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - six
     - tqdm
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - cpr
   commands:
